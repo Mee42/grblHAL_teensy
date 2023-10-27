@@ -27,23 +27,27 @@
 #error "Spindle sync is not supported"
 #endif
 
+#define EMPTY_INPUT_PIN (40u)
+#define EMPTY_OUTPUT_PIN_1 (39u)
+#define EMPTY_OUTPUT_PIN_2 (38u)
+
 // Define step pulse output pins.
-#define X_STEP_PIN          (2u)
-#define Y_STEP_PIN          (4u)
-#define Z_STEP_PIN          (6u)
+#define X_STEP_PIN          (31u)
+#define Y_STEP_PIN          (26u)
+#define Z_STEP_PIN          (27u)
 
 // Define step direction output pins.
-#define X_DIRECTION_PIN     (3u)
-#define Y_DIRECTION_PIN     (5u)
-#define Z_DIRECTION_PIN     (7u)
+#define X_DIRECTION_PIN     (32u)
+#define Y_DIRECTION_PIN     (30u)
+#define Z_DIRECTION_PIN     (28u)
 
 // Define stepper driver enable/disable output pin(s).
-#define STEPPERS_ENABLE_PIN (10u)
+//#define STEPPERS_ENABLE_PIN (10u)
 
 // Define homing/hard limit switch input pins.
-#define X_LIMIT_PIN         (20u)
-#define Y_LIMIT_PIN         (21u)
-#define Z_LIMIT_PIN         (22u)
+#define X_LIMIT_PIN         (10u)
+#define Y_LIMIT_PIN         (10u)
+#define Z_LIMIT_PIN         (10u)
 
 // Define ganged axis or A axis step pulse and step direction output pins.
 #if N_ABC_MOTORS > 0
@@ -62,24 +66,24 @@
 #endif
 
 // Define spindle enable and spindle direction output pins.
-#define SPINDLE_ENABLE_PIN      (12u)
-#define SPINDLE_DIRECTION_PIN   (11u)
-#define SPINDLE_PWM_PIN         (13u) // NOTE: only pin 12 or pin 13 can be assigned!
+//#define SPINDLE_ENABLE_PIN      (12u)
+//#define SPINDLE_DIRECTION_PIN   (11u)
+//#define SPINDLE_PWM_PIN         (13u) // NOTE: only pin 12 or pin 13 can be assigned!
 
 // Define flood and mist coolant enable output pins.
-#define COOLANT_FLOOD_PIN   (19u)
-#define COOLANT_MIST_PIN    (18u)
+#define COOLANT_FLOOD_PIN   EMPTY_OUTPUT_PIN_1
+#define COOLANT_MIST_PIN    EMPTY_OUTPUT_PIN_2
 
 // Define user-control CONTROLs (cycle start, reset, feed hold, door) input pins.
-#define RESET_PIN           (14u)
-#define FEED_HOLD_PIN       (16u)
-#define CYCLE_START_PIN     (17u)
+#define RESET_PIN           (33u)
+#define FEED_HOLD_PIN       (33u)
+#define CYCLE_START_PIN     (33u)
 #if SAFETY_DOOR_ENABLE
 #define SAFETY_DOOR_PIN     (29u)
 #endif
 
 // Define probe switch input pin.
-#define PROBE_PIN           (15U)
+#define PROBE_PIN           (15u)
 
 #if I2C_ENABLE
 #define I2C_PORT    4
